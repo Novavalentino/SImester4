@@ -1,0 +1,1 @@
+console.log("Halo, selamat datang di lab SOA1")
