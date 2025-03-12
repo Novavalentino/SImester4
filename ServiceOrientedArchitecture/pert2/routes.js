@@ -1,6 +1,4 @@
-const http = require('http');
-
-const server = http.createServer((req,res) => {
+export default (req,res) => {
     if (req.url === '/') {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/plain');
@@ -13,26 +11,14 @@ const server = http.createServer((req,res) => {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/plain');
         res.end("Buku 1: Laut Bercerita\nPenulis: Lella S.Chudorl");
-    }else if (req.url === '/books/2') {
+    }else if (req.url === 'books/2') {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/plain');
         res.end("Buku 2: The Lord Of The Ring\nPenulis: J.R.R Tolken");
-
-    }else if (req.url === '/about') {
-        res.statusCode = 200;
-        res.setHeader('Content-Type', 'text/html');
-        res.end('<h1>About Me</h1> \n <img src="./OIP.jpeg width="200px"> \n <ul><li>Nama: Valentino</li><li>NPM: 232210015</li></ul>');
-    }
-    
-    else {
+    }else {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/plain');
         res.end("Halaman tidak ditemukan");
     }
     
-});
-
-
-server.listen(3000, 'localhost', ()=> {
-    console.log('server berjalan pada http://localhost:3000/')
-});
+}
